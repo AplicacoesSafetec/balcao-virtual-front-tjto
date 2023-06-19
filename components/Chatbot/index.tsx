@@ -440,7 +440,7 @@ export function Chatbot({ desks, options }: ChatbotProps) {
   const showStakeholder = useCallback(async (dfMessenger: DfMessenger) => {
     const stakeholders = [
       {
-        text: 'Parte autora',
+        text: 'Autor / Autora',
       },
       {
         text: 'Parte ré',
