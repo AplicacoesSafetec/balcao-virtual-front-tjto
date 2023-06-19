@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [ {
+      "source": "**",
+      "run": {
+        "serviceId": "balcao-virtual-001",
+        "region": "us-east1"
+      }
+    } ]
+  }
+}
