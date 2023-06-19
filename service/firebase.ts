@@ -8,15 +8,15 @@ import { getStorage } from 'firebase/storage';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: 'AIzaSyAJWmffGQ6XweAzE7Ty_9f7oZr2IXzsKPw',
-  authDomain: 'balcao-virtual-004.firebaseapp.com',
-  projectId: 'balcao-virtual-004',
-  storageBucket: 'balcao-virtual-004.appspot.com',
-  messagingSenderId: '670474632224',
-  appId: '1:670474632224:web:2f2c10a2f9dc053478d045',
-  measurementId: 'G-81FB9FL3RW',
-};
+ const firebaseConfig = {
+    apiKey: "AIzaSyA1Y7QNe6AWz3n5Hjl6B4IX0xWbf66V-ww",
+    authDomain: "balcao-virtual-tjto.firebaseapp.com",
+    databaseURL: "https://balcao-virtual-tjto-default-rtdb.firebaseio.com",
+    projectId: "balcao-virtual-tjto",
+    storageBucket: "balcao-virtual-tjto.appspot.com",
+    messagingSenderId: "621571335925",
+    appId: "1:621571335925:web:b1ba69a6a46f5bda6487bc"
+  };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 

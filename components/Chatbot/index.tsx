@@ -278,7 +278,7 @@ export function Chatbot({ desks, options }: ChatbotProps) {
   }, [chatProtocol, getMessagesFromFirebase, userData, userProtocolChat]);
 
   const firstMessage =
-    'Olá, seja bem-vindo(a) ao balcão virtual! \n Os dados desse atendimento serão armazenados e preservados de acordo com a LGPD \n Para iniciarmos o seu atendimento, preciso da confirmação de alguns dados, caso estiver de acordo, clique na opção abaixo';
+    'Bem vindo, como vai? Para um atendimento rápido, é importante que tenha em mãos o número do seu CPF, o número do processo e o setor onde quer falar. Os dados desse atendimento serão armazenados e preservados de acordo com a LGPD';
 
   const loadAttendance = useCallback(async (email: string) => {
     try {
@@ -924,7 +924,7 @@ export function Chatbot({ desks, options }: ChatbotProps) {
         dangerouslySetInnerHTML={{
           __html: `
             <df-messenger
-            agent-id="ad8fb007-915e-4b09-b711-bd1ecbe86a15"
+            agent-id="a70bc358-0320-4dee-b0f1-9609b8d29bd6"
             chat-title="Agente - Balcão Virtual"
             language-code="pt-br"
             expand="true"
