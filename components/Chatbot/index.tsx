@@ -518,6 +518,136 @@ export function Chatbot({ desks, options }: ChatbotProps) {
     dfMessenger?.renderCustomCard(payload);
   }, []);
 
+
+  const showWishes = useCallback(async (dfMessenger: DfMessenger) => {
+    const wishes = [
+      {
+        text: 'Informação de audiência',
+      },
+      {
+        text: 'Impressão de boletos',
+      },
+      {
+        text: 'Certidão de antecedentes',
+      },
+      {
+        text: 'Tirar dúvidas',
+      },
+      {
+        text: 'Conclusão do processo',
+      },
+      {
+        text: 'Expedição de Alvará',
+      },
+      {
+        text: 'Análise do pedido de liminar',
+      },
+      {
+        text: 'Habilitação no processo',
+      },
+      {
+        text: 'Andamento do processo',
+      },
+    ];
+
+    const payload = [
+      {
+        type: 'chips',
+        options: wishes,
+      },
+    ];
+
+    dfMessenger?.renderCustomCard(payload);
+  }, []);
+
+
+  const showSectors = useCallback(async (dfMessenger: DfMessenger) => {
+    const sectors = [
+      {
+        text: 'Vara Cível',
+      },
+      {
+        text: 'Vara Criminal e Juizado Especial Criminal',
+      },
+      {
+        text: 'Vara de Família, Infância e Juventude',
+      },
+      {
+        text: 'Juizado Especial Cível',
+      },
+      {
+        text: 'Central de Execuções Fiscais Conciliação e Mediação - CEJUSC',
+      },
+      {
+        text: 'Central de Mandados',
+      },
+      {
+        text: 'Diretoria do Foro',
+      },
+    ];
+
+    const payload = [
+      {
+        type: 'chips',
+        options: sectors,
+      },
+    ];
+
+    dfMessenger?.renderCustomCard(payload);
+  }, []);
+
+  const showYouAre = useCallback(async (dfMessenger: DfMessenger) => {
+    const youAre = [
+      {
+        text: 'Autor / Autora',
+      },
+      {
+        text: 'Requerido / Requerida',
+      },
+      {
+        text: 'Advogado / Advogada',
+      },
+      {
+        text: 'Ministério Público',
+      },
+      {
+        text: 'Defensoria Pública',
+      },
+      {
+        text: 'Outro / Outra',
+      },
+    ];
+
+    const payload = [
+      {
+        type: 'chips',
+        options: youAre,
+      },
+    ];
+
+    dfMessenger?.renderCustomCard(payload);
+  }, []);
+
+  const showAlternative = useCallback(async (dfMessenger: DfMessenger) => {
+    const alternative = [
+      {
+        text: 'Não',
+      },
+      {
+        text: 'Sim',
+      },
+    ];
+
+    const payload = [
+      {
+        type: 'chips',
+        options: alternative,
+      },
+    ];
+
+    dfMessenger?.renderCustomCard(payload);
+  }, []);
+
   const showMeetLink = useCallback(
     async (dfMessenger: DfMessenger, meetLink: string) => {
       dfMessenger?.renderCustomText('Seu atendimento foi iniciado!');
@@ -750,6 +880,47 @@ export function Chatbot({ desks, options }: ChatbotProps) {
       ) {
         setTimeout(() => {
           showCategory(dfMessenger);
+        }, 800);
+      }
+
+      //aqui chamo a função para mostrar as os wishes que criei
+      if (
+        event.detail.response.queryResult.fulfillmentText?.includes(
+          'Clique abaixo para escolher o que você deseja',
+        )
+      ) {
+        setTimeout(() => {
+          showWishes(dfMessenger);
+        }, 800);
+      }
+
+      if (
+        event.detail.response.queryResult.fulfillmentText?.includes(
+          'Clique abaixo para escolher em qual setor que deseja falar',
+        )
+      ) {
+        setTimeout(() => {
+          showSectors(dfMessenger);
+        }, 800);
+      }
+
+      if (
+        event.detail.response.queryResult.fulfillmentText?.includes(
+          'Clique abaixo para escolher o que você é',
+        )
+      ) {
+        setTimeout(() => {
+          showYouAre(dfMessenger);
+        }, 800);
+      }
+
+      if (
+        event.detail.response.queryResult.fulfillmentText?.includes(
+          'Esse processo tem prioridade de atendimento?',
+        )
+      ) {
+        setTimeout(() => {
+          showAlternative(dfMessenger);
         }, 800);
       }
 
