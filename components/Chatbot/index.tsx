@@ -1155,6 +1155,3 @@ export function Chatbot({ desks, options }: ChatbotProps) {
 }
 
 export default Chatbot;
-function setLoading(arg0: boolean) {
-  throw new Error('Function not implemented.');
-}
