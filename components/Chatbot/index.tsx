@@ -963,7 +963,7 @@ export function Chatbot({ desks, options }: ChatbotProps) {
       }
       if (
         event.detail.response.queryResult.fulfillmentText ===
-        'A sua solicitação foi encaminhada para a equipe responsável e ela será respondida por e-mail dentro de 24h'
+        'Sua solicitação foi registrada. Informo que o processo será movimentado, respeitando as prioridades legais e capacidade de trabalho da equipe.'
       ) {
         setTimeout(async () => {
           await sendUserData(event);
